@@ -1,15 +1,15 @@
-<template>
-  <vue-mermaid-string :value="diagram" @node-click="handleNodeClick" />
-</template>
-
-<script>
+<script setup lang="ts">
+import VueMermaidString from 'vue-mermaid-string'
 import endent from 'endent'
+import { computed } from 'vue'
 
-export default {
-  computed: {
-    diagram() {
-      return endent`
-        classDiagram
+
+function handleNodeClick(nodeId) {
+  console.log('Clicked node:', nodeId)
+}
+const diagram = computed(() => {
+  return endent`
+       classDiagram
         Animal <|-- Duck
         Animal <|-- Fish
         Animal <|-- Zebra
@@ -17,18 +17,17 @@ export default {
           +String beakColor
           +swim()
           +quack()
-        }
-        click Duck
+        }  
       `
-    }
-  },
-  methods: {
-    handleNodeClick(nodeId) {
-      if (nodeId === 'Duck') {
-        alert('Duck node clicked!')
-        // Your custom JS logic here
-      }
-    }
-  }
-}
+})
 </script>
+
+<template>
+  <VueMermaidString
+
+    :value="diagram"
+
+    :options="{ theme: 'dark' }"
+    @node-click="handleNodeClick"
+  />
+</template>
