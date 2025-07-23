@@ -9,15 +9,14 @@ function handleNodeClick(nodeId) {
 }
 const diagram = computed(() => {
   return endent`
-       classDiagram
+        classDiagram
         Animal <|-- Duck
         Animal <|-- Fish
-        Animal <|-- Zebra
         class Duck {
           +String beakColor
           +swim()
           +quack()
-        }  
+        }
       `
 })
 </script>
