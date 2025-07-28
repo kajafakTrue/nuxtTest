@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "./"
+      ],
+      "env": {
+        "DEBUG": "true"
+      }
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["@modelcontextprotocol/server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "BSAN0tskiI-IqP7SZ-dNKMDQNbLxfIp",
+        "DEBUG": "true"
+      }
+    },
+    "sequentialthinking-tools": {
+      "command": "node",
+      "args": ["./node_modules/mcp-sequentialthinking-tools/dist/index.js"],
+      "env": {
+        "DEBUG": "true"
+      }
+    }
+  }
+}
+

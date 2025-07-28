@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Общие правила
+
+Следуй всей документации проекта и руководствуйся принципами из [Правила разработки](mdc:docs/architecture/development_rules.md). 
