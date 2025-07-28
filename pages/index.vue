@@ -14,10 +14,12 @@ const purchasesDiagram = computed(() => {
         Purchase --> Supplier
         
 
+
         click Purchase call handleDiagramClick("Purchase", "purchase")
         click Customer call handleDiagramClick("Customer", "customer")
         click Supplier call handleDiagramClick("Supplier", "supplier")
   `
+
 })
 
 async function handleDiagramClick(nodeId, nodeType: string) {
